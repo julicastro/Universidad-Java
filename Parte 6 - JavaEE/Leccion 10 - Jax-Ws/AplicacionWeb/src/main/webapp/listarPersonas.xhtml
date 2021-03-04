@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Listado de Personas</title>
+    </h:head>
+    <h:body>
+        <p:ajaxStatus style="width: 16px;height: 16px;" id="ajaxStatusPanel">
+            <f:facet name="start">
+                <h:graphicImage library="images" name="ajaxloading.gif" />
+            </f:facet>
+
+            <f:facet name="complete">
+                <h:outputText value="" />
+            </f:facet>
+
+        </p:ajaxStatus>
+
+        <h:form id="personasListForm">
+            <p:growl id="messages" showDetail="true" />
+            <p:messages/>
+
+            <p:dataTable id="personasDataTable" value="#{personaBean.personas}" var="persona" editable="true" rowKey="#{persona.idPersona}" 
+                         selection="#{personaBean.personaSeleccionada}" selectionMode="single" >
+
+                <f:facet name="header">
+                    Listado de Personas
+                </f:facet>
+                
+                <p:column headerText="Id">
+                    <h:outputText value="#{persona.idPersona}" />
+                </p:column>
+
+                <p:column headerText="Nombre">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{persona.nombre}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{persona.nombre}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Apellido">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{persona.apellido}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{persona.apellido}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Email">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{persona.email}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{persona.email}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Telefono">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{persona.telefono}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{persona.telefono}" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <f:facet name="footer">
+                    <p:commandButton value="Regresar" action="index" />
+                    <p:spacer height="5px"/>
+                    <p:commandButton value="Agregar" actionListener="#{personaBean.reiniciarPersonaSeleccionada}"
+                                     update=":dialogForm" oncomplete="PF('personaDialog').show()" />
+                </f:facet>
+
+                <p:column headerText="Opciones" style="width: 50px">
+                    <p:rowEditor/>
+                </p:column>
+
+                <p:ajax event="rowEdit" listener="#{personaBean.editListener}"/>
+
+            </p:dataTable>
+            
+            <p:contextMenu for="personasDataTable">
+                <p:menuitem value="Eliminar" update="personasListForm:personasDataTable" icon="ui-icon-close" 
+                            actionListener="#{personaBean.eliminarPersona}" />
+            </p:contextMenu>
+
+        </h:form>
+
+        <p:dialog id="personaDlg" widgetVar="personaDialog" header="Agregar Persona" modal="true" showEffect="fade" hideEffect="fade" 
+            resizable="false" >
+            <h:form id="dialogForm">
+                <p:outputPanel id="personaDetail" style="text-align: center">
+                    <p:panelGrid id="display" columns="4" columnClasses="label, value" >
+                        <h:outputText value="Nombre" />
+                        <h:inputText value="#{personaBean.personaSeleccionada.nombre}" />
+                        
+                        <h:outputText value="Apellido" />
+                        <h:inputText value="#{personaBean.personaSeleccionada.apellido}" />
+                        
+                        <h:outputText value="Email" />
+                        <h:inputText value="#{personaBean.personaSeleccionada.email}" />
+                        
+                        <h:outputText value="Telefono" />
+                        <h:inputText value="#{personaBean.personaSeleccionada.telefono}" />
+                        
+                        <f:facet name="footer" >
+                            <p:commandButton value="Agregar" actionListener="#{personaBean.agregarPersona}" 
+                                             update="display,:personasListForm:personasDataTable" oncomplete="PF('personaDialog').hide();" />
+                        </f:facet>
+                    </p:panelGrid>
+                </p:outputPanel>
+            </h:form>
+        </p:dialog>
+        
+
+    </h:body>
+</html>

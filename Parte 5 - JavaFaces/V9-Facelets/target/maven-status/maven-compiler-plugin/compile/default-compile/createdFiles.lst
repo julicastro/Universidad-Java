@@ -1,0 +1,6 @@
+beans\helper\MunicipioHelper.class
+beans\model\Municipio.class
+beans\configuracion\ConfigrationJSF.class
+beans\backing\VacanteForm.class
+beans\model\Candidato.class
+beans\lifecycle\DebuggerListener.class

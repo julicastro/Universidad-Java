@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistema SGA</title>
+    </h:head>
+    <h:body>
+        <h2>Sistema SGA</h2>
+        Bienvenido: <h:outputText value="#{p:userPrincipal()}" />
+        <h:form>
+            <p:messages />
+            <p:panelGrid columns="1" rendered="#{p:ifGranted('ROLE_ADMIN') || p:ifGranted('ROLE_USER')}">
+                <h:commandButton value="Listar Personas" action="listarPersonas" />
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

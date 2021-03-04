@@ -1,0 +1,7 @@
+ar\edu\unlam\mavenproject1\JAXRSConfiguration.class
+beans\configuracion\ConfigrationJSF.class
+beans\backing\VacanteForm.class
+beans\model\Candidato.class
+beans\configuracion\ConfigurationJsf.class
+beans\lifecycle\DebuggerListener.class
+ar\edu\unlam\mavenproject1\resources\JavaEE8Resource.class

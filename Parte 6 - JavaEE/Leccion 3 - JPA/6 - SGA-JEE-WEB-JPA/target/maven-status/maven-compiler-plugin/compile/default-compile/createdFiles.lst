@@ -1,0 +1,7 @@
+ar\edu\unlam\sga\domain\Persona.class
+ar\edu\unlam\sga\servicio\PersonaService.class
+ar\edu\unlam\sga\web\PersonaServlet.class
+ar\edu\unlam\sga\servicio\PersonaServiceRemote.class
+ar\edu\unlam\sga\datos\PersonaDao.class
+ar\edu\unlam\sga\datos\PersonaDaoImpl.class
+ar\edu\unlam\sga\servicio\PersonaServiceImpl.class

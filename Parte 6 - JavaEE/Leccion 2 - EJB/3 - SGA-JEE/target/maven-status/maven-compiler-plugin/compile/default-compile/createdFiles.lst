@@ -1,0 +1,4 @@
+ar\edu\unlam\sga\servicio\PersonaServiceRemote.class
+ar\edu\unlam\sga\domain\Persona.class
+ar\edu\unlam\sga\servicio\PersonaServiceImpl.class
+ar\edu\unlam\sga\cliente\ClientePersonaService.class

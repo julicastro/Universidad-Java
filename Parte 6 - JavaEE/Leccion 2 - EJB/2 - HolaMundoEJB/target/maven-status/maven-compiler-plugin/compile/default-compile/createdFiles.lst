@@ -1,0 +1,4 @@
+beans\HolaMundoEjbRemote.class
+test\TestHolaMundoEJB.class
+beans\HolaMundoEjbImpl.class
+.netbeans_automatic_build
