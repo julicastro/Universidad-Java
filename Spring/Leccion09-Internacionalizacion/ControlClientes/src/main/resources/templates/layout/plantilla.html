@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 th:text="#{plantilla.titulo}">Titulo</h1>
+        </header>
+        <footer th:fragment="footer">
+            <div>
+                <br/>
+                <a th:href="@{/(lang=en)}">EN</a> |
+                <a th:href="@{/(lang=es)}">ES</a> |
+                <span> [[#{plantilla.pie-pagina}]] <a href="https://www.linkedin.com/in/juli%C3%A1n-castro-8071411bb/" target="_blank">&copy; CASTRO JULIAN EMANUEL</a></span>
+            </div>
+        </footer>
+        
+        
+    </body>
+</html>
