@@ -21,11 +21,12 @@ public class AlumnoDAO extends GenericDAO {
             em.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace(System.out);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+        } 
+//        finally {
+//            if (em != null) {
+//                em.close();
+//            }
+//        }
     }
 
     public void actualizar(Alumno alumno) {
@@ -36,11 +37,12 @@ public class AlumnoDAO extends GenericDAO {
             em.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace(System.out);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+        } 
+//        finally {
+//            if (em != null) {
+//                em.close();
+//            }
+//        }
     }
     
     public void eliminar(Alumno alumno) {
@@ -51,11 +53,12 @@ public class AlumnoDAO extends GenericDAO {
             em.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace(System.out);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+        } 
+//        finally {
+//            if (em != null) {
+//                em.close();
+//            }
+//        }
     }
     
     public Alumno buscarPorId(Alumno alumno){
