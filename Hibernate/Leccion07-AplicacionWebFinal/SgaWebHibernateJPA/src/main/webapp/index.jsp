@@ -5,7 +5,10 @@
         <title>Inicio</title>
     </head>
     <body>
-        <h1>Inicio</h1>
+        
         <a href="${pageContext.request.contextPath}/ServletControlador">Listado Alumnos</a>
+        <br/>
+        
+        
     </body>
 </html>
