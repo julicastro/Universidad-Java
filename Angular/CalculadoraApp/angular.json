@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mi-primera-app": {
+    "listado-personas": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mi-primera-app",
+            "outputPath": "dist/listado-personas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mi-primera-app:build"
+            "browserTarget": "listado-personas:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mi-primera-app:build:production"
+              "browserTarget": "listado-personas:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mi-primera-app:build"
+            "browserTarget": "listado-personas:build"
           }
         },
         "test": {
@@ -118,17 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mi-primera-app:serve"
+            "devServerTarget": "listado-personas:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mi-primera-app:serve:production"
+              "devServerTarget": "listado-personas:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "mi-primera-app"
+  "defaultProject": "listado-personas"
 }
-

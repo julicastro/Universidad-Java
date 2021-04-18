@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Persona } from './persona.model';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  titulo = "Aplicacion Calculadora";
-  operandoA: number = 0;
-  operandoB: number = 0;
-  resultado: number = 0;
+  titulo = 'Listado de Personas';
+  personas: Persona[] = [
+    new Persona('Juan','Perez'), 
+    new Persona('Laura', 'Juarez'),
+    new Persona('Karla', 'Lara')
+  ];
 
-  sumar():void{
-    this.resultado = this.operandoA + this.operandoB;
+  personaAgregada(persona: Persona){
+    this.personas.push( persona );
   }
+
 }
