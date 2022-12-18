@@ -3,6 +3,8 @@ Contiene toda la práctica realizada en el curso de Universidad Java 2021 - De C
 
 Link: https://www.udemy.com/share/101Wlw2@Pm5KV2JgcFQKdkJGAHJ+RhRtSn0=/
 
+![certificado](https://user-images.githubusercontent.com/70999224/208285323-22f7e06a-1289-4629-a1fb-c056c31166c5.jpg)
+
 IDE: NetBeans
 
 El curso abarcó los siguientes conceptos:
